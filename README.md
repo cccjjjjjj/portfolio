@@ -10,17 +10,20 @@ QA Tester
 ### Academic Projects
 proj 1
 - desc
+
 proj 2
 - desc
 
 ### Academic Research
 res 1
 - desc
+
 res 2
 - desc
 
 ### Personal Projects
 proj 1
 - desc
+
 proj 2
 - desc
