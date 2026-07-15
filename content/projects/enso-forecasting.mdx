@@ -1,0 +1,46 @@
+---
+title: "Statistical ENSO Forecasting with Prophet"
+shortTitle: "ENSO Forecasting"
+order: 5
+year: "2023"
+status: "Completed research"
+disciplines:
+  - Time-series forecasting
+  - Climate analytics
+  - Research
+summary: "A statistical forecasting study using seven decades of oceanic and climate indicators to predict the Oceanic Niño Index."
+role: "Model developer and researcher"
+team: "Collaborative Saint Louis University research team"
+tools:
+  - Python
+  - Prophet
+  - Time-series analysis
+  - Climate data
+accent: "sand"
+---
+
+## Context and problem
+
+The El Niño-Southern Oscillation influences rainfall, agriculture, water resources, disaster planning, and public health. Forecasting its state can support earlier and better-targeted climate resilience decisions.
+
+This study investigated whether a Prophet model could forecast the Oceanic Niño Index using sea-surface temperatures, precipitation, and related Niño indicators.
+
+## My role
+
+I worked as a model developer and researcher within a collaborative undergraduate team. I contributed to model development, data preparation, temporal analysis, research, and interpretation. The final model and reported results are team outcomes.
+
+## Approach
+
+The research used monthly climate observations from January 1951 to July 2022. Data preparation included type correction, missing-value imputation, normalisation, and conversion to Prophet's expected time-series structure.
+
+The analysis examined relationships among oceanic variables before configuring monthly seasonality and evaluating the forecast against previous approaches discussed in the literature.
+
+## Reported result
+
+The study reported an MAE of 0.0141, MSE of 0.0187, and RMSE of 0.1366 on standardised ONI values. Prophet recorded the lowest MAE in the three-model comparison, while linear regression and the LSTM recorded lower MSE and RMSE.
+
+Because preprocessing was fitted before the split and the temporal validation procedure was not fully documented, these results should be treated as preliminary academic evidence rather than production-level forecasting performance.
+
+## Reflection
+
+The project demonstrated that model complexity alone does not determine usefulness. An interpretable statistical method can be valuable when it is matched to the data, evaluated carefully, and communicated in the context of operational decisions.

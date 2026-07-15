@@ -1,0 +1,55 @@
+---
+title: "Grace: Purchase Readiness and Return Follow-up"
+shortTitle: "Grace"
+order: 1
+year: "2026"
+status: "In progress"
+disciplines:
+  - Product management
+  - Native iOS
+  - UX strategy
+summary: "A source-transparent iOS product designed to keep important purchases ready for returns, refunds, and later warranty claims."
+role: "Product strategy, requirements, design direction, and development"
+team: "Independent product project"
+tools:
+  - Swift
+  - SwiftUI
+  - XCTest
+  - Product research
+  - Accessibility planning
+accent: "copper"
+---
+
+## Context and problem
+
+Receipts, warranty details, return links, and replacement history often live in different places. The practical problem is not merely storing a receipt. It is knowing what was confirmed, where the evidence came from, and what action needs attention.
+
+Grace is an in-progress native iOS product for Singapore. It helps a user capture selected purchases, verify extracted details, preserve proof, and follow a constrained return through refund.
+
+## My role
+
+I lead the product strategy, requirements, design direction, and development planning. The work includes defining the product boundary, documenting state transitions, separating return policies from commercial warranties and statutory protections, and creating testable acceptance criteria.
+
+## Product decisions
+
+- One record represents one selected item rather than an entire order.
+- Extraction starts only from content explicitly shared by the user.
+- Important values remain editable and retain their source context.
+- Return progress uses constrained but truthful transitions.
+- The initial local product is free, account-free, and ad-free.
+- Spending analytics and automatic inbox access remain outside the first release.
+
+## Delivery approach
+
+The project uses a documentation-first contract across product scope, interface behaviour, evidence status, and implementation queues. Foundation-only business logic can be tested on Windows, while Apple-specific SwiftUI and device behaviour require Xcode verification.
+
+At the current checkpoint, 109 contract-compatible GraceKit tests pass on Windows. The prepared iOS interface remains parse-only and must not be described as compiled or device-verified.
+
+## Challenge
+
+The difficult part is maintaining honest state. A missing warranty statement cannot become “no warranty,” an estimated arrival cannot become an actual delivery date, and a replacement cannot silently restart coverage. Those distinctions affect the data model, copy, reminders, and claim history.
+
+## Reflection
+
+Grace demonstrates how I approach ambiguous product work: narrow the promise, identify evidence boundaries, translate them into explicit rules, and keep implementation status visible. The next major gate is Xcode and real-device verification.
+

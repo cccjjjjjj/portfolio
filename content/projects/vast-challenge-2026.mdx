@@ -1,0 +1,56 @@
+---
+title: "VAST Challenge 2026: Investigating an AI-Agent Embargo Breach"
+shortTitle: "AI-Agent Embargo Breach"
+order: 2
+year: "2026"
+status: "Completed"
+disciplines:
+  - Visual analytics
+  - Network analysis
+  - Compliance
+summary: "An interactive investigation of how communication patterns and control gaps enabled an early public release."
+role: "Data analyst and visualisation developer"
+team: "Individual postgraduate project"
+tools:
+  - R
+  - Quarto
+  - ggplot2
+  - ggiraph
+  - jsonlite
+accent: "sage"
+externalUrl: "https://charles-vaa-journey.vercel.app/"
+externalLabel: "Visit visual analytics journal"
+---
+
+## Context and problem
+
+The VAST Challenge scenario follows seven AI agents managing communication around an acquisition embargo. Merger details appeared on agent-linked social accounts roughly one hour before the permitted release.
+
+The task was to reconstruct what happened, compare the incident with normal behaviour, and identify earlier signals that the control environment could fail.
+
+## My role
+
+I completed the analysis independently. I designed the data model, transformed the nested JSON, selected the visual methods, built the interactive views, and wrote the final interpretation.
+
+## Process
+
+I flattened the source into message-level and round-level tables, then combined five analytical views:
+
+1. An escalation timeline
+2. A communication leak chain
+3. Baseline versus incident behaviour
+4. Directed interaction networks
+5. Within-agent anomaly signals
+
+Several source inconsistencies required explicit handling. Recipient identifiers did not always match sender roles, sentiment used two labelling systems, and a stock-price spike appeared inconsistent with the surrounding series. I documented each issue instead of silently correcting it.
+
+## Key finding
+
+The investigation reframed the incident as a deliberate act enabled by systemic gaps. The compliance agent was not operating across every communication channel, which made the failure a coverage problem rather than a simple model failure.
+
+The analysis also challenged several first-pass assumptions. The evidence did not support blaming the interns, and it did not support attributing the stock decline solely to the early release.
+
+## Reflection
+
+The project strengthened my ability to connect technical evidence with governance questions. Network structure, timing, and channel coverage became more useful than treating every message as an isolated record.
+
