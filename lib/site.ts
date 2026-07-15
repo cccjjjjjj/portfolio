@@ -11,5 +11,15 @@ export const siteConfig = {
 };
 
 export function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (configuredUrl) return configuredUrl;
+
+  const [owner, repository] = (process.env.GITHUB_REPOSITORY ?? "").split("/");
+  if (process.env.GITHUB_ACTIONS === "true" && owner && repository) {
+    return repository.endsWith(".github.io")
+      ? `https://${repository}`
+      : `https://${owner}.github.io/${repository}`;
+  }
+
+  return "http://localhost:3000";
 }
