@@ -23,3 +23,14 @@ export function getSiteUrl() {
 
   return "http://localhost:3000";
 }
+
+export function getBasePath() {
+  const repository = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
+  const isProjectPages = process.env.GITHUB_ACTIONS === "true" && repository && !repository.endsWith(".github.io");
+  return isProjectPages ? `/${repository}` : "";
+}
+
+export function withBasePath(path: string) {
+  if (!path.startsWith("/") || path.startsWith("//")) return path;
+  return `${getBasePath()}${path}`;
+}

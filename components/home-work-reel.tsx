@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TransitionLink } from "@/components/transition-link";
+import { withBasePath } from "@/lib/site";
 
 const reel = [
   { src: "/images/projects/grace/home.png", alt: "Grace purchase readiness product screen" },
@@ -13,7 +14,7 @@ export function HomeWorkReel() {
       <div className="home-work-reel-media">
         {reel.map((item, index) => (
           <figure key={item.src} className={`home-work-reel-item home-work-reel-item--${index + 1}`}>
-            <Image src={item.src} alt={item.alt} fill priority sizes="(max-width: 700px) 50vw, 33vw" />
+            <Image src={withBasePath(item.src)} alt={item.alt} fill priority sizes="(max-width: 700px) 50vw, 33vw" />
           </figure>
         ))}
       </div>

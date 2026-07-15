@@ -41,6 +41,14 @@ jobs:
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
         run: npm run check
 
+      - name: Verify GitHub Pages asset paths
+        run: |
+          if grep -R -E '(src|href)="/images/' out --include='*.html'; then
+            echo 'Found an image path without the repository base path.'
+            exit 1
+          fi
+          test -f out/images/projects/illustrations/grace-sketch-v2.jpg
+
       - name: Upload static site
         uses: actions/upload-pages-artifact@v4
         with:

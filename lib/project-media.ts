@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/site";
+
 export type ProjectMedia = { src: string; alt: string };
 
 export const projectMedia: Record<string, ProjectMedia[]> = {
@@ -24,4 +26,6 @@ export const projectMedia: Record<string, ProjectMedia[]> = {
   ],
 };
 
-export function getProjectMedia(slug: string) { return projectMedia[slug] ?? []; }
+export function getProjectMedia(slug: string) {
+  return (projectMedia[slug] ?? []).map((item) => ({ ...item, src: withBasePath(item.src) }));
+}

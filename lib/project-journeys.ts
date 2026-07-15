@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/site";
+
 export type JourneyStep = { kicker: string; title: string; body: string };
 export type ProjectFact = { label: "Scope" | "Finding" | "Status"; value: string };
 
@@ -104,4 +106,7 @@ export const projectJourneys: Record<string, ProjectJourney> = {
   },
 };
 
-export function getProjectJourney(slug: string) { return projectJourneys[slug]; }
+export function getProjectJourney(slug: string) {
+  const journey = projectJourneys[slug];
+  return journey ? { ...journey, image: withBasePath(journey.image) } : undefined;
+}
